@@ -132,3 +132,27 @@ fun FormSiswa(
             )
 
             Spacer(modifier = Modifier.height(20.dp))
+
+            // tombol submit
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                enabled = txtNama.isNotEmpty() &&
+                        txtAlamat.isNotEmpty() &&
+                        txtGender.isNotEmpty(),
+                onClick = {
+                    onSubmitButtonClicked(
+                        mutableListOf(
+                            txtNama,
+                            txtGender,
+                            txtAlamat
+                        )
+                    )
+                }
+            ) {
+                Text(
+                    text = stringResource(R.string.submit)
+                )
+            }
+        }
+    }
+}
